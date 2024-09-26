@@ -6,6 +6,5 @@ module.exports = {
     },
     admin : (req,res) => {
         return res.sendFile(path.join(__dirname,'..','views','admin.html'))
-
     }
 }
