@@ -3,12 +3,12 @@ const path = require('path');
 
 module.exports = {
     register : (req,res) => {
-        return  res.sendFile(path.join(__dirname,'..','views','register.html'))
+        return res.render('register')
     },
     login : (req,res) => {
-        return  res.sendFile(path.join(__dirname,'..','views','login.html'))
+        return res.render('login')
     },
     profile : (req,res) => {
-        return  res.sendFile(path.join(__dirname,'..','views','profile.html'))
+        return res.render('profile')
     }
 } 
