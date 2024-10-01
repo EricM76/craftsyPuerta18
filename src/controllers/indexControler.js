@@ -1,51 +1,17 @@
-const path = require('path')
-const data = [
-    {
-        id : 1,
-        title : 'Product-01',
-        description : "lorem ipsum dolor amet sit",
-        photo : "img-phone-01.jpg"
-    },
-    {
-        id : 2,
-        title : 'Product-02',
-        description : "lorem ipsum dolor amet sit",
-        photo : "img-phone-02.jpg"
-    },
-    {
-        id : 3,
-        title : 'Product-03',
-        description : "lorem ipsum dolor amet sit",
-        photo : "img-phone-03.jpg"
-    },
-    {
-        id : 4,
-        title : 'Product-04',
-        description : "lorem ipsum dolor amet sit",
-        photo : "img-phone-01.jpg"
-    },
-    {
-        id : 5,
-        title : 'Product-05',
-        description : "lorem ipsum dolor amet sit",
-        photo : "img-phone-02.jpg"
-    },
-    {
-        id : 6,
-        title : 'Product-06',
-        description : "lorem ipsum dolor amet sit",
-        photo : "img-phone-03.jpg"
-    },
-]
+const {getData} = require('../data')
+const products = getData("products.json")
+
 module.exports = {
     index : (req,res) => {
 
         return res.render('home',{
-            products : data
+            products
         })
     },
     admin : (req,res) => {
 
-        return res.render('admin')
+        return res.render('admin',{
+            products
+        })
     }
 }

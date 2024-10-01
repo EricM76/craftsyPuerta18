@@ -1,10 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<%- include('./partials/head') %>
+  <%- include('./partials/head', { title : "Detalle del producto" }) %>
 
-<body>
-    <%- include('./partials/header') %>
+  <body>
+    <div class="container">
+      <!-- Contenedor ppal -->
 
-    <h1>Detalle del producto</h1>
-</body>
+      <%- include('./partials/header') %>
+      <main class="row">
+        <div class="col-12 col-md-8 mx-auto">
+          <div class="card">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img
+                  src="/img/<%= photo %>"
+                  class="img-fluid rounded-start"
+                  alt="..."
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title"><%= title %></h5>
+                  <p class="card-text"><%= description %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
 </html>

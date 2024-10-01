@@ -1,10 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<%- include('./partials/head') %>
+  <%- include('./partials/head',{ title : "Productos" }) %>
 
-<body>
-    <%- include('./partials/header') %>
-
-    <h1>Todos los productos</h1>
-</body>
+  <body>
+    <div class="container">
+      <%- include('./partials/header') %>
+      <main class="row">
+        <div class="card mb-5">
+          <div class="card-body">
+            <h1>Todos los productos</h1>
+            <hr />
+          </div>
+        </div>
+        <% products.forEach(({id, title, photo}) => { %>
+        <div class="col-12 col-md-6 col-lg-4">
+            <a href="/products/<%= id %>" style="text-decoration: none;">
+                   <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img
+                  src="/img/<%= photo %>"
+                  class="img-fluid rounded-start"
+                  alt="..."
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title" ><%= title %></h5>
+                  
+                 
+                </div>
+              </div>
+            </div>
+        </div>
+            </a>
+       
+        </div>
+        <% }) %>
+      </main>
+    </div>
+  </body>
 </html>

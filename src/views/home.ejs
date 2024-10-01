@@ -8,14 +8,15 @@
 			<%- include('./partials/header') %>
 			<main> <!-- Cuerpo principal del sitio -->
 				<section class="product-container"><!-- Contenedor de todos los productos -->
-					<% for( let i = 0; i < products.length; i++ ) { %>
+					
+					<% products.forEach(({id, photo, title}) => { %>
 						<article class="producto"><!-- Contenedor de cada producto -->
-							<img class="main-photo" src="/img/<%= products[i].photo %>" alt="">
-							<h2 class="name"><%= products[i].title %></h2>
+							<img class="main-photo" src="/img/<%= photo %>" alt="">
+							<h2 class="name"><%= title %></h2>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-							<a class="more" href="#">ver más</a>
+							<a class="more" href="/products/<%= id %>">ver más</a>
 						</article>
-					<% } %>
+					<% }) %>
 					
 				
 				</section>
