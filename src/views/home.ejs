@@ -9,9 +9,9 @@
 			<main> <!-- Cuerpo principal del sitio -->
 				<section class="product-container"><!-- Contenedor de todos los productos -->
 					
-					<% products.forEach(({id, photo, title}) => { %>
+					<% products.forEach(({id, image, title}) => { %>
 						<article class="producto"><!-- Contenedor de cada producto -->
-							<img class="main-photo" src="/img/<%= photo %>" alt="">
+							<img class="main-photo" src="<%= image %>" alt="">
 							<h2 class="name"><%= title %></h2>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
 							<a class="more" href="/products/<%= id %>">ver más</a>

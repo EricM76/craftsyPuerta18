@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const productsController = require('../controllers/productsController')
+const {list,detail,add} = require('../controllers/productsController')
 
-
-router.get('/',productsController.list) //-> listar todos los productos
-router.get('/:product_id',productsController.detail) //-> muestra el detalle de un producto
-
+// /products
+router
+    .get('/',list) //-> listar todos los productos
+    .get('/add',add) // -> muestra el formulario para agregar un producto
+    .get('/:product_id',detail) //-> muestra el detalle de un producto
 
 
 
