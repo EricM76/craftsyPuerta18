@@ -7,17 +7,20 @@
         <main class="row">
             <div class="col-12 col-md-8 mx-auto">
                 <div class="card">
+                  <div class="card-header">
+                    <h4>Nuevo producto</h4>
+                  </div>
                     <div class="card-body">
-                        <form class="row">
+                        <form class="row" method="POST" action="/products/add">
                             <div class="col-12 col-md-6 mb-3">
                               <label for="title" class="form-label">Nombre</label>
-                              <input type="text" class="form-control" id="title" >
+                              <input name="title" type="text" class="form-control" id="title" >
                               <small id="title-error" class="text-danger ms-2" hidden>Error al cargar el nombre del producto</small>
                             </div>
                             <div class="col-12 col-md-6 mb-3">
                               <label for="brand" class="form-label">Marca</label>
-                              <select class="form-select">
-                                <option selected hidden>Seleccione...</option>
+                              <select name="brand" class="form-select">
+                                <option value="" selected hidden>Seleccione...</option>
                                 <% brands.forEach(brand => { %>
                                   <option value="<%= brand.name %>"><%= brand.name %></option>
                                 <% }) %>
@@ -27,17 +30,17 @@
                             </div>
                             <div class="col-12 col-md-4 mb-3">
                               <label for="stock" class="form-label">Stock</label>
-                              <input type="number" class="form-control" id="stock" >
+                              <input name="stock" type="number" class="form-control" id="stock" >
                               <small id="stock-error" class="text-danger ms-2" hidden>Error al cargar el nombre del producto</small>
                             </div>
                             <div class="col-12 col-md-4 mb-3">
                               <label for="price" class="form-label">Precio</label>
-                              <input type="number" class="form-control" id="price" >
+                              <input name="price" type="number" class="form-control" id="price" >
                               <small id="price-error" class="text-danger ms-2" hidden>Error al cargar el nombre del producto</small>
                             </div>
                             <div class="col-12 col-md-4 mb-3">
                               <label for="discount" class="form-label">Descuento</label>
-                              <input type="number" class="form-control" id="discount" >
+                              <input name="discount" type="number" class="form-control" id="discount" >
                               <small id="discount-error" class="text-danger ms-2" hidden>Error al cargar el nombre del producto</small>
                             </div>
                             <div class="col-12  mb-3">
@@ -47,7 +50,8 @@
                             </div>
                             <div class="col-12 col-md-6 mb-3">
                               <label for="image" class="form-label">Agregar imagen</label>
-                              <input type="file" class="form-control" id="image" >
+                              <input name="image" type="file" class="form-control" id="image" 
+                              >
                               <small id="image-error" class="text-danger ms-2" hidden>Error al cargar el nombre del producto</small>
                             </div>
                             <div class="col-12 d-flex justify-content-end">

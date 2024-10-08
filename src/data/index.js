@@ -6,6 +6,13 @@ function getData(file = "") {
     return JSON.parse(json)
 }
 
+function storeData(array = [],file = "") {
+    const arrayJSON = JSON.stringify(array,null,2)
+    fs.writeFileSync(path.join(__dirname, file),arrayJSON, 'utf-8')
+    return null
+}
+
 module.exports = {
-    getData
+    getData,
+    storeData
 }
