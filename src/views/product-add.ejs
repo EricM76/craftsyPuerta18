@@ -25,11 +25,34 @@
                               </select>                              
                               <small id="brand-error" class="text-danger ms-2" hidden></small>
                             </div>
-                            <div class="mb-3 form-check">
-                              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            <div class="col-12 col-md-4 mb-3">
+                              <label for="stock" class="form-label">Stock</label>
+                              <input type="number" class="form-control" id="stock" >
+                              <small id="stock-error" class="text-danger ms-2" hidden>Error al cargar el nombre del producto</small>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <div class="col-12 col-md-4 mb-3">
+                              <label for="price" class="form-label">Precio</label>
+                              <input type="number" class="form-control" id="price" >
+                              <small id="price-error" class="text-danger ms-2" hidden>Error al cargar el nombre del producto</small>
+                            </div>
+                            <div class="col-12 col-md-4 mb-3">
+                              <label for="discount" class="form-label">Descuento</label>
+                              <input type="number" class="form-control" id="discount" >
+                              <small id="discount-error" class="text-danger ms-2" hidden>Error al cargar el nombre del producto</small>
+                            </div>
+                            <div class="col-12  mb-3">
+                              <label for="description" class="form-label">Descripción</label>
+<textarea style="resize: none;" name="description" class="form-control" id="description" rows="3"></textarea>                              
+<small id="description-error" class="text-danger ms-2" hidden>Error al cargar el nombre del producto</small>
+                            </div>
+                            <div class="col-12 col-md-6 mb-3">
+                              <label for="image" class="form-label">Agregar imagen</label>
+                              <input type="file" class="form-control" id="image" >
+                              <small id="image-error" class="text-danger ms-2" hidden>Error al cargar el nombre del producto</small>
+                            </div>
+                            <div class="col-12 d-flex justify-content-end">
+                              <button type="submit" class="btn btn-outline-dark">Agregar producto</button>
+                            </div>
                           </form>
                     </div>
                 </div>
