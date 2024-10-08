@@ -1,5 +1,6 @@
 const {getData} = require('../data')
 const products = getData("products.json")
+const brands = getData("brands.json")
 
 module.exports = {
     list : (req,res) => {
@@ -17,6 +18,9 @@ module.exports = {
         })
     },
     add : (req,res) => {
-        return res.render('product-add')
+        const brandsOrdered = brands.sort((a,b) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 0)
+        return res.render('product-add',{
+            brands : brandsOrdered
+        })
     }
 }
