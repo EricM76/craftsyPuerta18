@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head', { title : "Agregar producto" }) %>
+<body>
+    <div class="container">
+        <%- include('./partials/header') %>
+        <main class="row">
+            <div class="col-12 col-md-8 mx-auto">
+                <div class="card">
+                  <div class="card-header">
+                    <h4>Editar producto</h4>
+                  </div>
+                    <div class="card-body">
+                        <form class="row" method="POST" action="/products/update/<%= id%>?_method=PUT">
+                            <div class="col-12 col-md-6 mb-3">
+                              <label for="title" class="form-label">Nombre</label>
+                              <input name="title" value="<%= title %>" type="text" class="form-control" id="title" >
+                              <small id="title-error" class="text-danger ms-2" hidden>Error al cargar el nombre del producto</small>
+                            </div>
+                            <div class="col-12 col-md-6 mb-3">
+                              <label for="brand" class="form-label">Marca</label>
+                              <select name="brand" class="form-select">
+                                <% brands.forEach(brandItem => { %>
+                                  <option <%= brand === brandItem.name ? 'selected' : null %> value="<%= brandItem.name %>"><%= brandItem.name %></option>
+                                <% }) %>
+                              
+                              </select>                              
+                              <small id="brand-error" class="text-danger ms-2" hidden></small>
+                            </div>
+                            <div class="col-12 col-md-4 mb-3">
+                              <label for="stock" class="form-label">Stock</label>
+                              <input name="stock" value="<%= stock %>" type="number" class="form-control" id="stock" >
+                              <small id="stock-error" class="text-danger ms-2" hidden>Error al cargar el nombre del producto</small>
+                            </div>
+                            <div class="col-12 col-md-4 mb-3">
+                              <label for="price" class="form-label">Precio</label>
+                              <input name="price" value="<%= price %>" type="number" class="form-control" id="price" >
+                              <small id="price-error" class="text-danger ms-2" hidden>Error al cargar el nombre del producto</small>
+                            </div>
+                            <div class="col-12 col-md-4 mb-3">
+                              <label for="discount" class="form-label">Descuento</label>
+                              <input name="discount" value="<%= discount %>" type="number" class="form-control" id="discount" >
+                              <small id="discount-error" class="text-danger ms-2" hidden>Error al cargar el nombre del producto</small>
+                            </div>
+                            <div class="col-12  mb-3">
+                              <label for="description" class="form-label">Descripción</label>
+<textarea style="resize: none;" name="description" class="form-control" id="description" rows="3">
+  <%= description %>
+</textarea>                              
+<small id="description-error" class="text-danger ms-2" hidden>Error al cargar el nombre del producto</small>
+                            </div>
+                            <div class="col-12 col-md-6 mb-3">
+                              <label for="image" class="form-label">Agregar imagen</label>
+                              <input name="image" type="file" class="form-control" id="image" 
+                              >
+                              <small id="image-error" class="text-danger ms-2" hidden>Error al cargar el nombre del producto</small>
+                            </div>
+                            <div class="col-12 d-flex justify-content-end">
+                              <button type="submit" class="btn btn-outline-dark">Guardar cambios</button>
+                            </div>
+                          </form>
+                    </div>
+                </div>
+              
+            </div>
+        </main>
+
+    </main>
+    </div>
+    
+</body>
+</html>

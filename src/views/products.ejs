@@ -8,35 +8,70 @@
       <main class="row">
         <div class="card mb-5">
           <div class="card-body">
-            <h1>Todos los productos</h1>
+            <div class="d-flex justify-content-between">
+              <div>
+                   <h1>
+                <% if (locals.keywords) { %> 
+                  Resultado de la búsqueda: <%= keywords %>
+                <% } else { %>
+                  Todos los productos 
+                <% } %>
+              </h1>
+              <% if (!products.length) { %>
+                <div class="alert alert-info">
+                  No hay resultado para la búsqueda
+  
+              </div>
+                <% } %>
+              </div>
+           
+              <form
+                method="GET"
+                class="d-flex align-items-center"
+                role="search"
+                action="/products/search"
+              >
+                <input
+                  name="keywords"
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button class="btn btn-outline-success" type="submit">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </form>
+            </div>
+
             <hr />
           </div>
         </div>
-        <% products.forEach(({id, title, photo}) => { %>
-        <div class="col-12 col-md-6 col-lg-4">
-            <a href="/products/<%= id %>" style="text-decoration: none;">
-                   <div class="card mb-3">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img
-                  src="/img/<%= photo %>"
-                  class="img-fluid rounded-start"
-                  alt="..."
-                />
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title" ><%= title %></h5>
-                  
-                 
+        <% if (products.length) { %>
+          <% products.forEach(({id, title, image}) => { %>
+          <div class="col-12 col-md-6 col-lg-4">
+            <a href="/products/<%= id %>" style="text-decoration: none">
+              <div class="card mb-3">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img
+                      src="<%= image %>"
+                      class="img-fluid rounded-start"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title"><%= title %></h5>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-        </div>
             </a>
-       
-        </div>
-        <% }) %>
+          </div>
+          <% }) %>
+
+        <% } %>
       </main>
     </div>
   </body>

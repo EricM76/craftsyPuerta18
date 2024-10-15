@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const app = express();
+const methodOverride = require('method-override')
 const PORT = 3000;
 
 const indexRoutes = require('./routes/index.routes');
@@ -17,7 +18,9 @@ app.set('views',path.join(__dirname, 'views'));
 
 //configuración para recibir datos de los formularios
 app.use(express.json());
-app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.urlencoded({extended:true}));
+
+app.use(methodOverride('_method'))
 
 app.use('/', indexRoutes);
 app.use('/products',productsRoutes);

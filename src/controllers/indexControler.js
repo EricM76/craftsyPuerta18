@@ -5,7 +5,7 @@ module.exports = {
     index : (req,res) => {
 
         return res.render('home',{
-            products
+            products : products.filter(product => product.id < 7)
         })
     },
     admin : (req,res) => {

@@ -1,12 +1,12 @@
 [
   {
     "id": 1,
-    "title": "Vodafone Smart prime 7",
-    "brand": "Vodafone",
-    "price": 7611,
-    "discount": 20,
+    "title": "Vodafone Smart prime 10",
+    "brand": "Alcatel",
+    "price": "7611",
+    "discount": "20",
     "description": "in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante",
-    "stock": 57,
+    "stock": "57",
     "image": "http://dummyimage.com/300x300.png/cc0000/ffffff"
   },
   {
@@ -51,12 +51,12 @@
   },
   {
     "id": 6,
-    "title": "Sagem MC 959",
-    "brand": "Sagem",
-    "price": 9516,
-    "discount": 0,
-    "description": "posuere cubilia curae duis faucibus accumsan odio curabitur convallis duis",
-    "stock": 36,
+    "title": "Nokia 1100",
+    "brand": "Nokia",
+    "price": "9516",
+    "discount": "0",
+    "description": "El inmortal!!!",
+    "stock": "1000",
     "image": "http://dummyimage.com/300x300.png/5fa2dd/ffffff"
   },
   {
@@ -1026,6 +1026,16 @@
     "price": 600,
     "discount": 60,
     "description": "Está súper barato!!!!",
+    "stock": 100,
+    "image": "http://dummyimage.com/300x300.png/ff4444/ffffff"
+  },
+  {
+    "id": 104,
+    "title": "Nuevo celular 1",
+    "brand": "Asus",
+    "price": 1000,
+    "discount": 5,
+    "description": "Caro pero bueno. Posta",
     "stock": 100,
     "image": "http://dummyimage.com/300x300.png/ff4444/ffffff"
   }
