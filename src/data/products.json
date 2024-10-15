@@ -1,75 +1,5 @@
 [
   {
-    "id": 1,
-    "title": "Vodafone Smart prime 10",
-    "brand": "Alcatel",
-    "price": "7611",
-    "discount": "20",
-    "description": "in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante",
-    "stock": "57",
-    "image": "http://dummyimage.com/300x300.png/cc0000/ffffff"
-  },
-  {
-    "id": 2,
-    "title": "vivo Z3",
-    "brand": "vivo",
-    "price": 3357,
-    "discount": 30,
-    "description": "porttitor pede justo eu massa donec dapibus duis at velit eu est",
-    "stock": 78,
-    "image": "http://dummyimage.com/300x300.png/dddddd/000000"
-  },
-  {
-    "id": 3,
-    "title": "Spice Mi-422 Smartflo Pace",
-    "brand": "Spice",
-    "price": 2242,
-    "discount": 10,
-    "description": "nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta volutpat quam pede lobortis ligula",
-    "stock": 96,
-    "image": "http://dummyimage.com/300x300.png/cc0000/ffffff"
-  },
-  {
-    "id": 4,
-    "title": "Asus Zenpad S 8.0 Z580CA",
-    "brand": "Asus",
-    "price": 9454,
-    "discount": 30,
-    "description": "est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis",
-    "stock": 75,
-    "image": "http://dummyimage.com/300x300.png/dddddd/000000"
-  },
-  {
-    "id": 5,
-    "title": "Ulefone Armor 7E",
-    "brand": "Ulefone",
-    "price": 7530,
-    "discount": 0,
-    "description": "facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at",
-    "stock": 44,
-    "image": "http://dummyimage.com/300x300.png/ff4444/ffffff"
-  },
-  {
-    "id": 6,
-    "title": "Nokia 1100",
-    "brand": "Nokia",
-    "price": "9516",
-    "discount": "0",
-    "description": "El inmortal!!!",
-    "stock": "1000",
-    "image": "http://dummyimage.com/300x300.png/5fa2dd/ffffff"
-  },
-  {
-    "id": 7,
-    "title": "Apple iPhone 4",
-    "brand": "Apple",
-    "price": 9622,
-    "discount": 0,
-    "description": "amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et",
-    "stock": 11,
-    "image": "http://dummyimage.com/300x300.png/cc0000/ffffff"
-  },
-  {
     "id": 8,
     "title": "Samsung Mpower Txt M369",
     "brand": "Samsung",
@@ -1016,26 +946,6 @@
     "price": 1000,
     "discount": 10,
     "description": "Raaaarro",
-    "stock": 100,
-    "image": "http://dummyimage.com/300x300.png/ff4444/ffffff"
-  },
-  {
-    "id": 103,
-    "title": "E5",
-    "brand": "Motorola",
-    "price": 600,
-    "discount": 60,
-    "description": "Está súper barato!!!!",
-    "stock": 100,
-    "image": "http://dummyimage.com/300x300.png/ff4444/ffffff"
-  },
-  {
-    "id": 104,
-    "title": "Nuevo celular 1",
-    "brand": "Asus",
-    "price": 1000,
-    "discount": 5,
-    "description": "Caro pero bueno. Posta",
     "stock": 100,
     "image": "http://dummyimage.com/300x300.png/ff4444/ffffff"
   }

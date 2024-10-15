@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {list,detail,add, create, search, edit, update} = require('../controllers/productsController')
+const {list,detail,add, create, search, edit, update, destroy} = require('../controllers/productsController')
 
 // /products
 router
@@ -10,6 +10,7 @@ router
     .get('/search',search)
     .get('/edit/:product_id',edit)
     .put('/update/:product_id',update)
+    .delete('/destroy/:product_id',destroy)
 
     .get('/:product_id',detail) //-> muestra el detalle de un producto
 

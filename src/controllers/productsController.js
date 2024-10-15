@@ -120,5 +120,17 @@ module.exports = {
     return res.render('products',{
       products : productsModified
     })
+  },
+  destroy : (req,res) => {
+    const products = getData("products.json");
+    const {product_id} = req.params
+
+    const productsModified = products.filter(product => product.id !== +product_id);
+
+    storeData(productsModified,'products.json');
+
+    return res.render('products',{
+      products : productsModified
+    })
   }
 };
