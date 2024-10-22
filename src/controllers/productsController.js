@@ -1,3 +1,4 @@
+const {validationResult} = require('express-validator')
 const { getData, storeData } = require("../data");
 const brands = getData("brands.json");
 
@@ -31,7 +32,7 @@ module.exports = {
   },
   create: (req, res) => {
     const products = getData("products.json");
-    
+    return validationResult(req)
     
     //validación precaria
     for (const key in req.body) {
