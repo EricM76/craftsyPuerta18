@@ -11,7 +11,7 @@
                     <h4>Nuevo producto</h4>
                   </div>
                     <div class="card-body">
-                        <form class="row" method="POST" action="/products/add">
+                        <form class="row" method="POST" action="/products/add" enctype="multipart/form-data">
                             <div class="col-12 col-md-6 mb-3">
                               <label for="title" class="form-label">Nombre</label>
                               <input name="title" type="text" class="form-control" id="title" >
@@ -50,7 +50,7 @@
                             </div>
                             <div class="col-12 col-md-6 mb-3">
                               <label for="image" class="form-label">Agregar imagen</label>
-                              <input name="image" type="file" class="form-control" id="image" 
+                              <input name="image" type="file" class="form-control" id="image"
                               >
                               <small id="image-error" class="text-danger ms-2" hidden>Error al cargar el nombre del producto</small>
                             </div>

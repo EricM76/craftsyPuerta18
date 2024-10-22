@@ -31,16 +31,16 @@ module.exports = {
   },
   create: (req, res) => {
     const products = getData("products.json");
-
+    
+    
     //validación precaria
     for (const key in req.body) {
       if (req.body[key].trim() == "") {
         return res.send("Todos los campos son requeridos");
       }
     }
-
     const { title, brand, description, price, discount, stock } = req.body;
-
+    
     //guardar datos
     const newProduct = {
       id: +products[products.length - 1].id + 1,
@@ -50,7 +50,7 @@ module.exports = {
       discount: +discount,
       description: description.trim(),
       stock: +stock,
-      image: "http://dummyimage.com/300x300.png/ff4444/ffffff",
+      image: req.file.filename,
     };
 
     products.push(newProduct);

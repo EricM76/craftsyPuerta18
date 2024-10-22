@@ -931,22 +931,12 @@
   },
   {
     "id": 101,
-    "title": "A54",
-    "brand": "Samsung",
-    "price": 100,
+    "title": "Motorola G42",
+    "brand": "Motorola",
+    "price": 300,
     "discount": 5,
-    "description": "Caro pero bueno",
-    "stock": 10,
-    "image": "http://dummyimage.com/300x300.png/ff4444/ffffff"
-  },
-  {
-    "id": 102,
-    "title": "Tigre XL",
-    "brand": "Lenovo",
-    "price": 1000,
-    "discount": 10,
-    "description": "Raaaarro",
+    "description": "Celular Liberado G42 Rosa 6,4\" 128 Gb - MOTOROLA",
     "stock": 100,
-    "image": "http://dummyimage.com/300x300.png/ff4444/ffffff"
+    "image": "image-1729607108862.jpg"
   }
 ]

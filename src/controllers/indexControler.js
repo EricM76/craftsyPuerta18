@@ -5,7 +5,7 @@ module.exports = {
         const products = getData("products.json")
 
         return res.render('home',{
-            products : products.filter(product => product.id < 7)
+            products
         })
     },
     admin : (req,res) => {
