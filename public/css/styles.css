@@ -22,16 +22,17 @@ body {
 }
 
 /* Container */
-.container {
-	width: 1140px;
-	margin: 0 auto;
-}
+
 
 /* Header */
-header {
+.header {
 	width: 1140px;
 	margin-bottom: 20px;
 	z-index: 999;
+}
+
+main {
+	margin: 0 auto;
 }
 .logo {
 	float:left;
@@ -68,11 +69,7 @@ header {
 }
 
 /* Main */
-main {
-	width: 1140px;
-	padding-top: 10px;
-	overflow: hidden;
-}
+
 .product-container {
 	float: left;
 	width: 800px;
@@ -182,7 +179,7 @@ main {
   border: 1px solid #3c8dbc;
   color: #fff;
   text-transform: capitalize;
-  width: 40%;
+  width: 300px;
   padding: 8px 14px;
   border-radius: 10px;
 	cursor: pointer;

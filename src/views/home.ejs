@@ -7,50 +7,36 @@
 		<div class="container"> <!-- Contenedor ppal -->
 			<%- include('./partials/header') %>
 			<main> <!-- Cuerpo principal del sitio -->
-				<section class="product-container"><!-- Contenedor de todos los productos -->
+				<section class="row row-gap-2"><!-- Contenedor de todos los productos -->
 					
 					<% products.forEach(({id, image, title}) => { %>
-						<article class="producto"><!-- Contenedor de cada producto -->
-							<img class="main-photo" src="<%= image %>" alt="">
-							<h2 class="name"><%= title %></h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-							<a class="more" href="/products/<%= id %>">ver más</a>
-						</article>
+						<div class="col-12 col-md-6">
+							<article class="card">
+								<div class="card-body">
+									<div class="row">
+										<div class="col-12 col-lg-4 d-flex justify-content-center align-items-start">
+											<img class="img-fluid" style="height: 300px; object-fit: contain;"                  src="<%= /(?:https?):\/\/(\w+:?\w*)?(\S+)(:\d+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/.test(image) ? image : `/images/${image}`%>"
+											alt="">
+										</div>
+										<div class="col-12 col-lg-8 p-2">
+											<h2 class="name"><%= title %></h2>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+											<a class="more" href="/products/<%= id %>">ver más</a>
+										</div>
+
+									
+									</div>
+									
+								</div><!-- Contenedor de cada producto -->
+								
+							</article>
+						</div>
+						
 					<% }) %>
 					
 				
 				</section>
-				<aside class="left-column">
-					<h2>Tutoriales</h2>
-					<section class="tutorials-container">
-						<article class="tutorial">
-						<img src="img/aside-01.jpg" alt="">
-						<p>Título del tutorial de reparación.</p>
-						</article>
-						<article class="tutorial">
-						<img src="img/aside-02.jpg" alt="">
-						<p>Título del tutorial de reparación.</p>
-						</article>
-						<article class="tutorial">
-						<img src="img/aside-03.jpg" alt="">
-						<p>Título del tutorial de reparación.</p>
-						</article>
-						<article class="tutorial">
-						<img src="img/aside-04.jpg" alt="">
-						<p>Título del tutorial de reparación.</p>
-						</article>
-					</section>
-					<h2>Publicidad</h2>
-					<section class="ads-container">
-						<article class="ads">
-							<img src="img/ad-01.jpg" alt="">
-						</article>
-						<article class="ads">
-							<img src="img/ad-02.jpg" alt="">
-						</article>
-					</section>
-
-				</aside>
+				
 			</main>
 		</div>
 

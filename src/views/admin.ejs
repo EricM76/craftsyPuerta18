@@ -5,23 +5,49 @@
     }) %>
 
 <body>
-    <div class="container"> <!-- Contenedor ppal -->
+    <header class="container-fluid"> <!-- Contenedor ppal -->
 
-    <%- include('./partials/header') %>
-        <div class="card mb-2">
-            <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
-                    <h1>Back Office</h1>
-                    <a class="btn btn-outline-dark" href="/products/add">Agregar producto</a>
-                </div>
-               
-                 <hr>
-            </div>
-          
+      <nav class="navbar bg-primary border-bottom navbar-expand-md border-body" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a href="/"><img class="logo" src="/img/logo.png" alt="logo craftsy"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Categorías</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">Usuarios</a>
+              </li>
+            </ul>
          
+          </div>
         </div>
+      </nav>
+    </header>
+       <main class="container mt-3">
         <div class="card">
+          <div class="card-header d-flex justify-content-between align-items-center">
+<div>
+  <h2>Productos</h2>
+  <form class="d-flex" role="search">
+    <input class="form-control me-2" type="search" placeholder="Escriba aquí..." aria-label="Search">
+    <button class="btn btn-outline-dark" type="submit">Buscar</button>
+  </form>
+</div>
+           
+
+            <a class="btn btn-outline-dark" href="/products/add">Agregar producto</a>
+
+          </div>
             <div class="card-body">
+            
              <table class="table">
                  <thead>
                    <tr>
@@ -80,6 +106,7 @@
      </div>
      </div>
     </div>
+  </main>
     <%- include('./partials/footer') %>
 
 </body>

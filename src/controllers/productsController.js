@@ -31,8 +31,8 @@ module.exports = {
     });
   },
   create: (req, res) => {
-    const products = getData("products.json");
-    return validationResult(req)
+    const products = getData("products.json");    
+    return res.send(validationResult(req))
     
     //validación precaria
     for (const key in req.body) {
