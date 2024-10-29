@@ -1,0 +1,18 @@
+[
+    {
+        "id" : 1,
+        "name" : "Eric",
+        "surname" : "Mena",
+        "rol" : "admin",
+        "email" : "admin@email.com",
+        "pass" : "123456"
+    },
+    {
+        "id" : 2,
+        "name" : "Fausto",
+        "surname" : "Pappetti",
+        "rol" : "user",
+        "email" : "user@email.com",
+        "pass" : "123456"
+    }
+]

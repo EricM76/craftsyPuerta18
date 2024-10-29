@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-	<%- include('./partials/head') %>
+	<%- include('./partials/head', {
+        title : "Mi perfil"
+    }) %>
 
 <body>
     <%- include('./partials/header') %>
-
-    <h1>Perfil de usuario</h1>
+<main class="container">
+<div class="row">
+    <div class="col-12 col-8 mx-auto">
+        <div class="card">
+            <div class="card-body">
+                <h2>Perfil de Usuario</h2>
+                <hr>
+                <h4>Hola! <%= userLogin.name %>!</h4>
+            </div>
+        </div>
+    </div>
+</div>
+   
+</main>
 </body>
 </html>
