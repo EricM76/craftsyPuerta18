@@ -5,7 +5,7 @@
     <div class="container">
         <%- include('./partials/header') %>
         <main class="row">
-            <div class="col-12 col-md-8 mx-auto">
+            <div class="col-12 col-md-10 mx-auto">
                 <div class="card">
                   <div class="card-header">
                     <h4>Nuevo producto</h4>
@@ -14,39 +14,50 @@
                         <form class="row" method="POST" action="/products/add" enctype="multipart/form-data">
                             <div class="col-12 col-md-6 mb-3">
                               <label for="title" class="form-label">Nombre</label>
-                              <input name="title" type="text" class="form-control" id="title" >
-                              <small id="title-error" class="text-danger ms-2" hidden>Error al cargar el nombre del producto</small>
+                              <input name="title" type="text" class="form-control <%= (locals.errors && errors.title) ? 'is-invalid' : null %>" id="title" value="<%= locals.old ? old.title : null %>">
+                              <small id="title-error" class="text-danger ms-2" ><%= (locals.errors && errors.title) ? errors.title.msg : null %></small>
                             </div>
                             <div class="col-12 col-md-6 mb-3">
                               <label for="brand" class="form-label">Marca</label>
-                              <select name="brand" class="form-select">
+                              <select name="brand" class="form-select <%= (locals.errors && errors.brand) ? 'is-invalid' : null %>"">
                                 <option value="" selected hidden>Seleccione...</option>
                                 <% brands.forEach(brand => { %>
-                                  <option value="<%= brand.name %>"><%= brand.name %></option>
+                                  <option <%= locals.old && old.brand == brand.name ? 'selected' : null %> value="<%= brand.name %>"><%= brand.name %></option>
                                 <% }) %>
                               
                               </select>                              
-                              <small id="brand-error" class="text-danger ms-2" hidden></small>
+                              <small id="brand-error" class="text-danger ms-2">
+                                <%= (locals.errors && errors.brand) ? errors.brand.msg : null %>
+                              </small>
                             </div>
                             <div class="col-12 col-md-4 mb-3">
                               <label for="stock" class="form-label">Stock</label>
-                              <input name="stock" type="number" class="form-control" id="stock" >
-                              <small id="stock-error" class="text-danger ms-2" hidden>Error al cargar el nombre del producto</small>
+                              <input name="stock" type="number" class="form-control <%= (locals.errors && errors.stock) ? 'is-invalid' : null %>" id="stock"  value="<%= locals.old ? old.stock : null %>">
+                              <small id="stock-error" class="text-danger ms-2">
+                                <%= (locals.errors && errors.stock) ? errors.stock.msg : null %>
+                              </small>
                             </div>
                             <div class="col-12 col-md-4 mb-3">
                               <label for="price" class="form-label">Precio</label>
-                              <input name="price" type="number" class="form-control" id="price" >
-                              <small id="price-error" class="text-danger ms-2" hidden>Error al cargar el nombre del producto</small>
+                              <input name="price" type="number" class="form-control <%= (locals.errors && errors.price) ? 'is-invalid' : null %>" id="price" value="<%= locals.old ? old.price : null %>">
+                              <small id="price-error" class="text-danger ms-2">
+                                <%= (locals.errors && errors.price) ? errors.price.msg : null %>
+                              </small>
                             </div>
                             <div class="col-12 col-md-4 mb-3">
                               <label for="discount" class="form-label">Descuento</label>
-                              <input name="discount" type="number" class="form-control" id="discount" >
-                              <small id="discount-error" class="text-danger ms-2" hidden>Error al cargar el nombre del producto</small>
+                              <input name="discount" type="number" class="form-control <%= (locals.errors && errors.discount) ? 'is-invalid' : null %>" id="discount" value="<%= locals.old ? old.discount : null %>">
+                              <small id="discount-error" class="text-danger ms-2">
+                                <%= (locals.errors && errors.discount) ? errors.discount.msg : null %>
+
+                              </small>
                             </div>
                             <div class="col-12  mb-3">
                               <label for="description" class="form-label">Descripción</label>
-<textarea style="resize: none;" name="description" class="form-control" id="description" rows="3"></textarea>                              
-<small id="description-error" class="text-danger ms-2" hidden>Error al cargar el nombre del producto</small>
+                              <textarea style="resize: none;" name="description" class="form-control <%= (locals.errors && errors.description) ? 'is-invalid' : null %>" id="description" rows="3"><%= locals.old ? old.description : null %></textarea>                              
+                              <small id="description-error" class="text-danger ms-2" >
+                                <%= (locals.errors && errors.description) ? errors.description.msg : null %>
+                              </small>
                             </div>
                             <div class="col-12 col-md-6 mb-3">
                               <label for="image" class="form-label">Agregar imagen</label>

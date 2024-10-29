@@ -1,6 +1,13 @@
 const {validationResult} = require('express-validator')
 const { getData, storeData } = require("../data");
 const brands = getData("brands.json");
+const brandsOrdered = brands.sort((a, b) =>
+  a.name.toLowerCase() > b.name.toLowerCase()
+    ? 1
+    : a.name.toLowerCase() < b.name.toLowerCase()
+    ? -1
+    : 0
+);
 
 module.exports = {
   list: (req, res) => {
@@ -11,55 +18,53 @@ module.exports = {
   },
   detail: (req, res) => {
     const products = getData("products.json");
-    const { product_id } = req.params;
-    const product = products.find((product) => product.id === +product_id);
+    const { id } = req.params;
+    const product = products.find((product) => product.id === +id);
 
     return res.render("product-detail", {
       ...product,
     });
   },
   add: (req, res) => {
-    const brandsOrdered = brands.sort((a, b) =>
-      a.name.toLowerCase() > b.name.toLowerCase()
-        ? 1
-        : a.name.toLowerCase() < b.name.toLowerCase()
-        ? -1
-        : 0
-    );
+
     return res.render("product-add", {
       brands: brandsOrdered,
     });
   },
   create: (req, res) => {
     const products = getData("products.json");    
-    return res.send(validationResult(req))
+    const errors = validationResult(req);
+
+    if(errors.isEmpty()){
+      const { title, brand, description, price, discount, stock } = req.body;
     
-    //validación precaria
-    for (const key in req.body) {
-      if (req.body[key].trim() == "") {
-        return res.send("Todos los campos son requeridos");
-      }
+      //guardar datos
+      const newProduct = {
+        id: +products[products.length - 1].id + 1,
+        title: title.trim(),
+        brand,
+        price: +price,
+        discount: +discount,
+        description: description.trim(),
+        stock: +stock,
+        image: req.file ? req.file.filename : "http://dummyimage.com/200x300.png/cc0000/ffffff",
+      };
+  
+      products.push(newProduct);
+  
+      storeData(products,'products.json')
+  
+      //respuesta al cliente
+      return res.redirect(`/products/${newProduct.id}`)
+    }else{
+      
+      return res.render('product-add',{
+        brands: brandsOrdered,
+        errors : errors.mapped(),
+        old : req.body
+      })
     }
-    const { title, brand, description, price, discount, stock } = req.body;
-    
-    //guardar datos
-    const newProduct = {
-      id: +products[products.length - 1].id + 1,
-      title: title.trim(),
-      brand,
-      price: +price,
-      discount: +discount,
-      description: description.trim(),
-      stock: +stock,
-      image: req.file.filename,
-    };
-
-    products.push(newProduct);
-
-    storeData(products,'products.json')
-
-    //respuesta al cliente
-    return res.redirect(`/products/${newProduct.id}`)
+   
   },
   search : (req,res) => {
     const products = getData("products.json");

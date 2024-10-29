@@ -14,7 +14,7 @@ router
     .put('/update/:product_id',update)
     .delete('/destroy/:product_id',destroy)
 
-    .get('/:product_id',detail) //-> muestra el detalle de un producto
+    .get('/:id',detail) //-> muestra el detalle de un producto
 
 
 

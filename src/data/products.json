@@ -938,5 +938,15 @@
     "description": "Celular Liberado G42 Rosa 6,4\" 128 Gb - MOTOROLA",
     "stock": 100,
     "image": "image-1729607108862.jpg"
+  },
+  {
+    "id": 102,
+    "title": "celu multer 5",
+    "brand": "Samsung",
+    "price": 100,
+    "discount": 0,
+    "description": "sdfsd asdasd asdasdadasd",
+    "stock": 23,
+    "image": "http://dummyimage.com/200x300.png/cc0000/ffffff"
   }
 ]
