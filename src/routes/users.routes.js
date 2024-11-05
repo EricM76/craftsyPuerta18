@@ -1,14 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const usersController = require('../controllers/usersController')
-
+const {register, processRegister, login, processLogin, profile, logout} = require('../controllers/usersController')
+const registerValidator = require('../validations/registerValidator')
 // /users
 
 router
-    .get('/register',usersController.register)
-    .get('/login',usersController.login)
-    .post('/login', usersController.processLogin)
-    .get('/profile',usersController.profile)
-    .get('/logout',usersController.logout)
+    .get('/register',register)
+    .post('/register',registerValidator, processRegister)
+    .get('/login',login)
+    .post('/login', processLogin)
+    .get('/profile',profile)
+    .get('/logout',logout)
 
 module.exports = router

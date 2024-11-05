@@ -1,18 +1,17 @@
 [
-    {
-        "id" : 1,
-        "name" : "Eric",
-        "surname" : "Mena",
-        "rol" : "admin",
-        "email" : "admin@email.com",
-        "pass" : "123456"
-    },
-    {
-        "id" : 2,
-        "name" : "Fausto",
-        "surname" : "Pappetti",
-        "rol" : "user",
-        "email" : "user@email.com",
-        "pass" : "123456"
-    }
+  {
+    "id": 1,
+    "name": "Admin",
+    "email": "admin@email.com",
+    "password": "$2a$12$tB2UEC5PFokSvns/bUtaL.ssHpyNq4bEAq2//w4BLfc1k1i/1ML/O",
+    "rol": "admin"
+  },
+  {
+    "id": 2,
+    "name": "User",
+    "email": "user@email.com",
+    "password": "$2a$12$7XtC.IDMSw76InAz4wJ4h.96qzWGyEDzYmF7CzmP7R3CyAmvw/yei",
+    "rol": "user"
+  }
+ 
 ]
