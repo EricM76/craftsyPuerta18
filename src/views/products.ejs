@@ -6,11 +6,11 @@
     <div class="container">
       <%- include('./partials/header') %>
       <main class="row">
-        <div class="card mb-5">
+        <div class="card mb-1">
           <div class="card-body">
             <div class="d-flex justify-content-between">
               <div>
-                   <h1>
+                   <h3>
                 <% if (locals.keywords) { %> 
                   Resultado de la búsqueda: <%= keywords %>
                 <% } else { %>
@@ -45,7 +45,28 @@
             </div>
 
             <hr />
-          </div>
+         </div>
+         
+        </div>
+        <div class="col-12 mb-3">
+          <nav class="d-flex justify-content-end">
+            <ul class="pagination">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+             <% for( let i = 1; i <= totalPages; i++ ) { %>
+              <li class="page-item <%= page == i && 'active' %>"><a class="page-link" href="/products?page=<%= i %>"><%= i %></a></li>
+
+             <% } %>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
         <% if (products.length) { %>
           <% products.forEach(({id, title, image}) => { %>

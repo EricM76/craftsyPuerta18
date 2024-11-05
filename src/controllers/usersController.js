@@ -50,7 +50,7 @@ module.exports = {
                 rol : user.rol
             }
 
-            return res.redirect('/')
+            return user.rol == "admin" ? res.redirect('/admin') : res.redirect("/")
         }else {
             return res.render('login',{
                 msg : "Credenciales inválidas"
